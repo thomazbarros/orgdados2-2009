@@ -1,13 +1,12 @@
 package questao1;
 
 public class Celula {
-	int chave;
-	int estado;
-	Celula proximoElemento;
+	private int chave;
+	private int estado;
+	private Celula proximoElemento;
 	
 	
 	public Celula(){
-		chave = -1;
 		estado = 0;
 		proximoElemento = null;
 	}
