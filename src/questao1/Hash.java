@@ -28,16 +28,16 @@ public class Hash {
 			
 			while(hash.get(index).getEstado() < 0){
 					
+					if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
+						return index;
+					}	
+					
 					if(hash.get(index).getProximoElemento() == null){
 						return index;
 					}
 					else{
 						index = hash.indexOf(hash.get(index).getProximoElemento());
 					}
-					
-					if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
-						return index;
-					}	
 					
 			}
 			
