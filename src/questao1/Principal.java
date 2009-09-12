@@ -1,6 +1,4 @@
 package questao1;
-import questao1.Hash;
-
 
 public class Principal {
 
@@ -56,7 +54,7 @@ public class Principal {
 					int elementoBusca = (int)System.in.read();
 					
 					int index = hash.busca(elementoBusca);
-					if(index != -1){
+					if(Math.abs(hash.getHash().get(index).getEstado()) == 1 && hash.getHash().get(index).getChave() == elementoBusca){
 						System.out.println("O elemento " +elementoBusca+ " esta na hash");
 					}
 					else{
