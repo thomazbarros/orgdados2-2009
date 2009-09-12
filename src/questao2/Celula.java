@@ -1,4 +1,4 @@
-package questao1;
+package questao2;
 
 public class Celula {
 	private int chave;
