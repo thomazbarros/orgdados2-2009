@@ -20,4 +20,9 @@ public class Hash {
 		{
 			return cheio;
 		}
+		
+		int hashcode(Celula celula)
+		{
+			return celula.getChave()%tamanho; 
+		}
 }
