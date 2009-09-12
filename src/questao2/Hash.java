@@ -26,11 +26,7 @@ public class Hash {
 		{
 			int index = hashcode(elemento);
 			
-			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
-				return index;
-			}
-			
-			while(hash.get(index).getEstado() < 0){
+			while(hash.getProximoElemento() != null){
 					
 					if(hash.get(index).getProximoElemento() == null){
 						return index;
