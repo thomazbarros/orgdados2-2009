@@ -46,6 +46,8 @@ public class Principal {
 							catch(Exception e){}
 						}
 						
+						break;
+						
 					case 2 : 
 						
 						System.out.println("Digite o elemento que deseja remover");
@@ -59,6 +61,8 @@ public class Principal {
 							}
 							catch(Exception e){}
 						}
+						
+						break;						
 						
 					case 3 : 
 						
@@ -75,10 +79,15 @@ public class Principal {
 						}
 						catch(Exception e){}
 						
+						break;
 						
 					case 4 : 
 						
 						break;
+				}
+				
+				if(opcao == 4){
+					break;
 				}
 			}
 			catch(Exception e){}			
