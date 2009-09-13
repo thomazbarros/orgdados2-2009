@@ -11,8 +11,7 @@ public class Hash {
 		int indexAnterior;
 		int numeroElementos;
 	
-	public
-		Hash(int tamanho)
+	public Hash(int tamanho)
 		{
 			numeroElementos = 0;
 			this.tamanho = tamanho;
