@@ -22,10 +22,10 @@ public class Principal {
 		while(true)
 		{
 			System.out.println("Digite o que deseja fazer :");
-			System.out.println("1-Inserir novo elemento");
-			System.out.println("2-Buscar um elemento");
-			System.out.println("3-Remover um elemento");
-			System.out.println("4-Sair");
+			System.out.println("1 - Inserir novo elemento");
+			System.out.println("2 - Buscar um elemento");
+			System.out.println("3 - Remover um elemento");
+			System.out.println("4 - Sair");
 			
 			try{
 				int opcao = Integer.parseInt(leitor.readLine());
