@@ -11,7 +11,7 @@ public class Principal {
 		BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));  
 		int tamanho = 0;
 		
-		System.out.println("Digite o numero de elementos da hash");
+		System.out.println("Digite o número de elementos da hash");
 		try{
 			tamanho = Integer.parseInt(leitor.readLine());
 		}
@@ -34,9 +34,9 @@ public class Principal {
 				
 					case 1 : 
 						
-						System.out.println("Digite o elemento que deseja inserir");
+						System.out.println("Digite o elemento que deseja inserir:");
 						if(hash.isCheio()){
-							System.out.println("A hash esta cheia");
+							System.out.println("A hash está cheia");
 						}
 						else{
 							try{
@@ -50,7 +50,7 @@ public class Principal {
 						
 						System.out.println("Digite o elemento que deseja remover");
 						if(hash.isVazio()){
-							System.out.println("A hash esta vazia");
+							System.out.println("A hash está vazia.");
 						}
 						else{
 							try{
@@ -67,10 +67,10 @@ public class Principal {
 							int elementoBusca = Integer.parseInt(leitor.readLine());
 							int index = hash.busca(elementoBusca);
 							if(Math.abs(hash.getHash().get(index).getEstado()) == 1 && hash.getHash().get(index).getChave() == elemento){
-								System.out.println("O elemento " +elementoBusca+ " esta na hash");
+								System.out.println("O elemento " +elementoBusca+ " está na hash");
 							}
 							else{
-								System.out.println("O elemento " +elementoBusca+ " nao esta na hash");
+								System.out.println("O elemento " +elementoBusca+ " não está na hash");
 							};
 						}
 						catch(Exception e){}
