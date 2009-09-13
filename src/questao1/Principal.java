@@ -11,7 +11,7 @@ public class Principal {
 		BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));  
 		int tamanho = 0;
 		
-		System.out.println("Digite o número de elementos da hash");
+		System.out.println("Digite o número de elementos da hash:");
 		try{
 			tamanho = Integer.parseInt(leitor.readLine());
 		}
@@ -36,7 +36,7 @@ public class Principal {
 						
 						System.out.println("Digite o elemento que deseja inserir:");
 						if(hash.isCheio()){
-							System.out.println("A hash está cheia");
+							System.out.println("A hash está cheia.");
 						}
 						else{
 							try{
@@ -50,7 +50,7 @@ public class Principal {
 						
 					case 2 : 
 						
-						System.out.println("Digite o elemento que deseja remover");
+						System.out.println("Digite o elemento que deseja procurar:");
 						if(hash.isVazio()){
 							System.out.println("A hash está vazia.");
 						}
