@@ -35,20 +35,30 @@ public class Principal {
 					case 1 : 
 						
 						System.out.println("Digite o elemento que deseja inserir");
-						try{
-							int elementoInsercao = Integer.parseInt(leitor.readLine());
-							hash.insercao(elementoInsercao);
+						if(hash.isCheio()){
+							System.out.println("A hash esta cheia");
 						}
-						catch(Exception e){}
+						else{
+							try{
+								int elementoInsercao = Integer.parseInt(leitor.readLine());
+								hash.insercao(elementoInsercao);
+							}
+							catch(Exception e){}
+						}
 						
 					case 2 : 
 						
 						System.out.println("Digite o elemento que deseja remover");
-						try{
-							int elementoRemocao = Integer.parseInt(leitor.readLine());
-							hash.remocao(elementoRemocao);
+						if(hash.isVazio()){
+							System.out.println("A hash esta vazia");
 						}
-						catch(Exception e){}
+						else{
+							try{
+								int elementoRemocao = Integer.parseInt(leitor.readLine());
+								hash.remocao(elementoRemocao);
+							}
+							catch(Exception e){}
+						}
 						
 					case 3 : 
 						
