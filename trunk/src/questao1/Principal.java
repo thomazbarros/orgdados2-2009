@@ -22,10 +22,11 @@ public class Principal {
 		while(true)
 		{
 			System.out.println("Digite o que deseja fazer :");
-			System.out.println("1 - Inserir novo elemento");
-			System.out.println("2 - Buscar um elemento");
-			System.out.println("3 - Remover um elemento");
-			System.out.println("4 - Sair");
+			System.out.println("1-Inserir novo elemento");
+			System.out.println("2-Remover um elemento");
+			System.out.println("3-Buscar um elemento");
+			System.out.println("4-Sair");
+//			System.out.println(hash.getHash());
 			
 			try{
 				int opcao = Integer.parseInt(leitor.readLine());
@@ -50,7 +51,7 @@ public class Principal {
 						
 					case 2 : 
 						
-						System.out.println("Digite o elemento que deseja procurar:");
+						System.out.println("Digite o elemento que deseja remover:");
 						if(hash.isVazio()){
 							System.out.println("A hash está vazia.");
 						}
@@ -66,7 +67,7 @@ public class Principal {
 						
 					case 3 : 
 						
-						System.out.println("Digite o elemento que deseja remover");
+						System.out.println("Digite o elemento que deseja procurar");
 						try{
 							int elementoBusca = Integer.parseInt(leitor.readLine());
 							int index = hash.busca(elementoBusca);

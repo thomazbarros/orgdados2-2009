@@ -15,7 +15,11 @@ public class Hash {
 		{
 			numeroElementos = 0;
 			this.tamanho = tamanho;
-			hash = new ArrayList(tamanho);
+			hash = new ArrayList<Celula>(tamanho);
+			for(int i = 0; i < tamanho; i++){
+				hash.add(new Celula());
+			}
+			System.out.println("TAMANHO DA HASH :" + hash.size());
 		}
 		
 		int hashcode(int elemento)
@@ -35,29 +39,39 @@ public class Hash {
 		
 		int busca(int elemento)
 		{
-			int index = hashcode(elemento);
-			indexAnterior = -1;
-			while(hash.get(index).getEstado() < 0){
-					
-					if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
-						return index;
-					}	
-					
-					if(hash.get(index).getProximoElemento() == null){
-						return index;
-					}
-					else{
-						indexAnterior = index;
-						index = hash.indexOf(hash.get(index).getProximoElemento());
-					}
-					
+			try{
+				
+				int index = hashcode(elemento);
+				indexAnterior = -1;
+				while(hash.get(index).getEstado() < 0){
+						
+						if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
+
+							return index;
+						}	
+						
+						if(hash.get(index).getProximoElemento() == null){
+
+							return index;
+						}
+						else{
+							indexAnterior = index;
+							index = hash.indexOf(hash.get(index).getProximoElemento());
+						}
+						
+				}
+								
+				return index;
+			}catch(Exception e){
+				e.printStackTrace();
 			}
-			
-			return index;
+			return 1;
 		}
 		
 		void insercao(int elemento){
+			try{
 			int index = busca(elemento);
+			System.out.println(index + "," + elemento + "," + (Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento));
 			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento)
 			{
 					System.out.println("A tabela já contém o elemento desejado.");
@@ -70,44 +84,48 @@ public class Hash {
 					hash.get(hashcode(elemento)).setEstado(1);
 				}
 				else{
-					for(int i = tamanho; i >= 0; i--)
+					for(int i = tamanho-1; i >= 0; i--)
 					{
-						if(hash.get(i).getEstado() == 0)
+						if(Math.abs(hash.get(i).getEstado()) != 1)
 						{
-							hash.get(hashcode(elemento)).setChave(elemento);
-							hash.get(hashcode(elemento)).setEstado(1);
+							hash.get(i).setChave(elemento);
+							hash.get(i).setEstado(1);
 							hash.get(index).setEstado(-1);
 							hash.get(index).setProximoElemento(hash.get(i));
+							break;
 						}
 					}
 				}
 			}
 			System.out.println("Número incluído com sucesso.");
 			numeroElementos++;
+			}catch(Exception e){e.printStackTrace();}
 		}
 		
 		void remocao(int elemento){
-			int index = busca(elemento);
-			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
-				if(hash.get(index+1).getEstado() < 0){ /*verificando se é o fim ou não da cadeia */
-					hash.get(index).setEstado(-2);
-					if (hash.get(index).getProximoElemento() != null){
-						hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
+			try{
+				int index = busca(elemento);
+				if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
+					if(hash.get(index).getEstado() < 0){ /*verificando se é o fim ou não da cadeia */
+						hash.get(index).setEstado(-2);
+						//if (hash.get(index).getProximoElemento() != null){
+						//	hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
+						//}
+						//else 
+						if (indexAnterior != -1){
+							hash.get(indexAnterior).setProximoElemento(null);
+						}
 					}
-					else if (indexAnterior != -1){
-						hash.get(indexAnterior).setProximoElemento(null);
+					else{
+						hash.get(index).setEstado(2);
 					}
+					System.out.println("Número removido com sucesso.");
+					numeroElementos--;
 				}
 				else{
-					hash.get(index).setEstado(2);
+					System.out.println("A tabela não contém o elemento desejado.");
 				}
-				System.out.println("Número removido com sucesso.");
-				numeroElementos--;
-			}
-			else{
-				System.out.println("A tabela não contém o elemento desejado.");
-			}	
-
+			}catch(Exception e){e.printStackTrace();}
 		}
 
 		public ArrayList<Celula> getHash() {

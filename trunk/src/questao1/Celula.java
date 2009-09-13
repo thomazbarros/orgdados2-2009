@@ -41,4 +41,11 @@ public class Celula {
 		this.proximoElemento = proximoElemento;
 	}
 	
+	/*public String toString(){
+		if(proximoElemento != null){
+			return "Estado :" + estado + "Chave :" + chave + "Proximo :" + proximoElemento.getChave() ;
+		}
+		return "Estado :" + estado + "Chave :" + chave + "Proximo :" + proximoElemento;
+	}*/
+	
 }
