@@ -9,10 +9,12 @@ public class Hash {
 		int tamanho;
 		int celulasUsadas;
 		int indexAnterior;
+		int numeroElementos;
 	
 	public
 		Hash(int tamanho)
 		{
+			numeroElementos = 0;
 			this.tamanho = tamanho;
 			hash = new ArrayList(tamanho);
 		}
@@ -22,7 +24,15 @@ public class Hash {
 			return elemento%tamanho; 
 		}
 		
-
+		boolean isCheio()
+		{
+			return numeroElementos == tamanho;
+		}
+		
+		boolean isVazio()
+		{
+			return numeroElementos == 0;
+		}
 		
 		int busca(int elemento)
 		{
@@ -49,12 +59,13 @@ public class Hash {
 		
 		void insercao(int elemento){
 			int index = busca(elemento);
-			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento))
+			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento)
 			{
 					System.out.println("A tabela já contém o elemento desejado.");
+					return;
 			}
 			else{
-				if(hash.get(hashcode(elemento))).getEstado() == 0)
+				if(hash.get(hashcode(elemento)).getEstado() == 0)
 				{
 					hash.get(hashcode(elemento)).setChave(elemento);
 					hash.get(hashcode(elemento)).setEstado(1);
@@ -67,12 +78,13 @@ public class Hash {
 							hash.get(hashcode(elemento)).setChave(elemento);
 							hash.get(hashcode(elemento)).setEstado(1);
 							hash.get(index).setEstado(-1);
-							hash.get(index).setProx(hash.get(i));
+							hash.get(index).setProximoElemento(hash.get(i));
 						}
 					}
 				}
 			}
 			System.out.println("Número incluído com sucesso.");
+			numeroElementos++;
 		}
 		
 		void remocao(int elemento){
@@ -86,6 +98,7 @@ public class Hash {
 					hash.get(index).setEstado(2);
 				}
 				System.out.println("Número removido com sucesso.");
+				numeroElementos--;
 			}
 			else{
 				System.out.println("A tabela não contém o elemento desejado.");
