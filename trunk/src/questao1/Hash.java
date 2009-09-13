@@ -47,6 +47,34 @@ public class Hash {
 			return index;
 		}
 		
+		void insercao(int elemento){
+			int index = busca(elemento);
+			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento))
+			{
+					System.out.println("A tabela já contém o elemento desejado.");
+			}
+			else{
+				if(hash.get(hashcode(elemento))).getEstado() == 0)
+				{
+					hash.get(hashcode(elemento)).setChave(elemento);
+					hash.get(hashcode(elemento)).setEstado(1);
+				}
+				else{
+					for(int i = tamanho; i >= 0; i--)
+					{
+						if(hash.get(i).getEstado() == 0)
+						{
+							hash.get(hashcode(elemento)).setChave(elemento);
+							hash.get(hashcode(elemento)).setEstado(1);
+							hash.get(index).setEstado(-1);
+							hash.get(index).setProx(hash.get(i));
+						}
+					}
+				}
+			}
+			System.out.println("Número incluído com sucesso.");
+		}
+		
 		void remocao(int elemento){
 			int index = busca(elemento);
 			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
