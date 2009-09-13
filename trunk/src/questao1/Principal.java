@@ -10,13 +10,17 @@ public class Principal {
 		
 		BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));  
 		int tamanho = 0;
-		
-		System.out.println("Digite o número de elementos da hash:");
 		try{
+			while (tamanho <= 0){
+			System.out.println("Digite o número de elementos da hash:");
 			tamanho = Integer.parseInt(leitor.readLine());
+				if(tamanho <=0){
+					System.out.println("Tamanho inválido. Tente novamente.");
+				}
+			}
 		}
 		catch(Exception e){}
-		
+
 		Hash hash = new Hash(tamanho);
 		
 		while(true)
@@ -26,6 +30,7 @@ public class Principal {
 			System.out.println("2-Remover um elemento");
 			System.out.println("3-Buscar um elemento");
 			System.out.println("4-Sair");
+			
 			System.out.println(hash.getHash());
 			
 			try{
