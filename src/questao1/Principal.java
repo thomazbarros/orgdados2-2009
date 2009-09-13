@@ -66,7 +66,7 @@ public class Principal {
 						try{
 							int elementoBusca = Integer.parseInt(leitor.readLine());
 							int index = hash.busca(elementoBusca);
-							if(Math.abs(hash.getHash().get(index).getEstado()) == 1 && hash.getHash().get(index).getChave() == elemento){
+							if(Math.abs(hash.getHash().get(index).getEstado()) == 1 && hash.getHash().get(index).getChave() == elementoBusca){
 								System.out.println("O elemento " +elementoBusca+ " está na hash");
 							}
 							else{
