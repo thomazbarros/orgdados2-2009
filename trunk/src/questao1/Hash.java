@@ -113,7 +113,7 @@ public class Hash {
 						//}
 						//else 
 						if (indexAnterior != -1){
-							hash.get(indexAnterior).setProximoElemento(null);
+							hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
 						}
 					}
 					else{
