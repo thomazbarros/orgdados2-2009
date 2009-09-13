@@ -26,8 +26,12 @@ public class Hash {
 		{
 			int index = hashcode(elemento);
 			
-			while(hash.getProximoElemento() != null){
+			while(hash.get(index).getProximoElemento() != null ){
 					
+					if(hash.get(index).getChave() == elemento){
+						return index;
+					}	
+		
 					if(hash.get(index).getProximoElemento() == null){
 						return index;
 					}
@@ -35,15 +39,30 @@ public class Hash {
 						index = hash.indexOf(hash.get(index).getProximoElemento());
 					}
 					
-					if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
-						return index;
-					}	
-					
 			}
 			
 			return index;
 		}
-
+		
+		void insercao(int elemento){
+			int index = busca(elemento);
+			int indexInserida = tamanho-1;
+			
+			if(hash.get(index).getChave() == elemento){
+				System.out.println("O elemento "+elemento+" ja se encontra na hash");
+				return;
+			}
+			
+			while(indexInserida >= 0){
+				
+			}
+			
+		}
+		
+		void remocao(int elemento){
+			
+		}
+		
 		public ArrayList<Celula> getHash() {
 			return hash;
 		}
