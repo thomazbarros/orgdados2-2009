@@ -92,7 +92,12 @@ public class Hash {
 			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
 				if(hash.get(index+1).getEstado() < 0){ /*verificando se é o fim ou não da cadeia */
 					hash.get(index).setEstado(-2);
-					hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
+					if (hash.get(index).getProximoElemento() != null){
+						hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
+					}
+					else if (indexAnterior != -1){
+						hash.get(indexAnterior).setProximoElemento(null);
+					}
 				}
 				else{
 					hash.get(index).setEstado(2);
