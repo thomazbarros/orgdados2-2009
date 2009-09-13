@@ -84,6 +84,10 @@ public class Principal {
 					case 4 : 
 						
 						break;
+					
+					default:
+						System.out.println("Opção inválida. Tente novamente.");
+						break;
 				}
 				
 				if(opcao == 4){
