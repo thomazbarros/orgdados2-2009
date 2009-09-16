@@ -1,10 +1,10 @@
 /*
  * Questão 2 do primeiro trabalho de Organização de Dados II
  * Desenvolvido por:
- * Carolina ... DRE:
- * Gustavo Henrique Alves dos Santos DRE: 107363191
- * Leopoldo Andre Dutra Lusquino Filho DRE: 107363002
- * Thomaz Avila Barros DRE:107363028
+ * 					Carolina Szkruc Carvalho DRE: 107413394
+ * 					Gustavo Henrique Alves dos Santos DRE: 107363191
+ * 					Leopoldo Andre Dutra Lusquino Filho DRE: 107363002
+ * 					Thomaz Avila Barros DRE:107363028
  */
 package questao2;
 
