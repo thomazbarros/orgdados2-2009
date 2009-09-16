@@ -1,3 +1,12 @@
+/*
+ * Questão 1 do primeiro trabalho de Organização de Dados II
+ * Desenvolvido por:
+ * Carolina ... DRE:
+ * Gustavo Henrique Alves dos Santos DRE:
+ * Leopoldo Andre Dutra Lusquino Filho DRE:
+ * Thomaz Avila Barros DRE:107363028
+ */
+
 package questao1;
 
 import java.io.BufferedReader;
