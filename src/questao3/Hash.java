@@ -118,12 +118,25 @@ public class Hash {
 				
 				System.out.println("Número removido com sucesso.");
 				numeroElementos--;
+				correcao(novoindex);
 			}
 			else{
 				System.out.println("A tabela não contém o elemento desejado.");
 			}
 		}
-
+		
+		public void correcao(int index)
+		{
+			int novoindex;
+			
+			if(hash.get(index).getProximoElemento() != null)
+			{
+				novoindex = hash.indexOf(hash.get(index).getProximoElemento())
+				hash.get(index) = hash.get(novoindex);
+				correcao(novoindex);
+			}
+		}
+		
 		public ArrayList<Celula> getHash() {
 			return hash;
 		}
