@@ -49,14 +49,18 @@ public class Principal {
 				
 					case 1 : 
 						
-						System.out.println("Digite o elemento que deseja inserir:");
 						if(hash.isCheio()){
 							System.out.println("A hash está cheia.");
 						}
 						else{
+							System.out.println("Digite o elemento que deseja inserir:");
 							try{
 								int elementoInsercao = Integer.parseInt(leitor.readLine());
 								hash.insercao(elementoInsercao);
+								System.out.println("Digite o dado a ser inserido:");
+								String dado = leitor.readLine();
+								//falta continuar aqui
+								
 							}
 							catch(Exception e){}
 						}
