@@ -13,6 +13,7 @@ public class Celula {
 	private int chave;
 	private int estado;
 	private Celula proximoElemento;
+	private String dado;
 	
 	
 	public Celula(){
@@ -48,6 +49,16 @@ public class Celula {
 
 	public void setProximoElemento(Celula proximoElemento) {
 		this.proximoElemento = proximoElemento;
+	}
+
+
+	public String getDado() {
+		return dado;
+	}
+
+
+	public void setDado(String dado) {
+		this.dado = dado;
 	}
 	
 //	public String toString(){
