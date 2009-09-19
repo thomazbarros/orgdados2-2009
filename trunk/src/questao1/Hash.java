@@ -69,7 +69,7 @@ public class Hash {
 			return index;
 		}
 		
-		void insercao(int elemento){
+		void insercao(int elemento, String dado){
 			int index = busca(elemento);
 			//System.out.println(index + "," + elemento + "," + (Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento));
 			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento)
@@ -82,6 +82,7 @@ public class Hash {
 				{
 					hash.get(hashcode(elemento)).setChave(elemento);
 					hash.get(hashcode(elemento)).setEstado(1);
+					hash.get(hashcode(elemento)).setDado(dado);
 				}
 				else{
 					for(int i = tamanho-1; i >= 0; i--)
