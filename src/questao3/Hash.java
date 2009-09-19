@@ -127,10 +127,9 @@ public class Hash {
 		
 		public void correcao(int index)
 		{
-			int novoindex;
-			
 			if(hash.get(index).getProximoElemento() != null)
 			{
+				int novoindex;
 				novoindex = hash.indexOf(hash.get(index).getProximoElemento())
 				hash.get(index) = hash.get(novoindex);
 				correcao(novoindex);
