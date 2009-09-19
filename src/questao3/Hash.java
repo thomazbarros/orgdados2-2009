@@ -118,7 +118,7 @@ public class Hash {
 				
 				System.out.println("Número removido com sucesso.");
 				numeroElementos--;
-				correcao(novoindex);
+				correcao(index);
 			}
 			else{
 				System.out.println("A tabela não contém o elemento desejado.");
