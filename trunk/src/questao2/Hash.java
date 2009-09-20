@@ -102,13 +102,6 @@ public class Hash {
 		void remocao(int elemento){
 			int index = busca(elemento);
 			if(hash.get(index).getChave() == elemento){
-					//if (hash.get(index).getProximoElemento() != null){
-					//	hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
-					//}
-					//else 
-				//if (indexAnterior != -1){
-			//		hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
-				//}
 				if(hash.get(index).getProximoElemento() != null){
 					hash.get(index).setChave(hash.get(index).getProximoElemento().getChave());
 					hash.get(index).getProximoElemento().setChave(Celula.vazio);

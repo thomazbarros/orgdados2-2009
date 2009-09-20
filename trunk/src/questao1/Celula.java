@@ -60,11 +60,5 @@ public class Celula {
 		this.dado = dado;
 	}
 	
-//	public String toString(){
-	//	if(proximoElemento != null){
-		//	return "Estado :" + estado + "Chave :" + chave + "Proximo :" + proximoElemento.getChave() ;
-	//	}
-	//	return "Estado :" + estado + "Chave :" + chave + "Proximo :" + proximoElemento;
-//	}
 	
 }
