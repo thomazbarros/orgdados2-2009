@@ -91,6 +91,7 @@ public class Hash {
 						{
 							hash.get(i).setChave(elemento);
 							hash.get(i).setEstado(1);
+							hash.get(i).setDado(dado);
 							hash.get(index).setEstado(-1);
 							hash.get(index).setProximoElemento(hash.get(i));
 							break;
