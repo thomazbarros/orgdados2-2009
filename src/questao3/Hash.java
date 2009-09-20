@@ -130,8 +130,8 @@ public class Hash {
 			if(hash.get(index).getProximoElemento() != null)
 			{
 				int novoindex;
-				novoindex = hash.indexOf(hash.get(index).getProximoElemento())
-				hash.get(index) = hash.get(novoindex);
+				novoindex = hash.indexOf(hash.get(index).getProximoElemento());
+				hash.set(index,hash.get(novoindex));
 				correcao(novoindex);
 			}
 		}
