@@ -12,12 +12,13 @@ public class Celula {
 	private int chave;
 	private Celula proximoElemento;
 	public static final int vazio = -999999;
+	private String dado;
 	
 	public Celula(){
 		chave = vazio;
 		proximoElemento = null;
 	}
-
+	
 	public int getChave() {
 		return chave;
 	}
@@ -28,6 +29,14 @@ public class Celula {
 
 	public Celula getProximoElemento() {
 		return proximoElemento;
+	}
+	
+	public String getDado() {
+		return dado;
+	}
+
+	public void setDado(String dado) {
+		this.dado = dado;
 	}
 
 	public void setProximoElemento(Celula proximoElemento) {
@@ -40,5 +49,7 @@ public class Celula {
 		}
 		return "Chave :" + chave + "Proximo :" + proximoElemento;
 	}
+
+
 	
 }

@@ -15,7 +15,6 @@ public class Celula {
 	private Celula proximoElemento;
 	private String dado;
 	
-	
 	public Celula(){
 		estado = 0;
 		proximoElemento = null;
