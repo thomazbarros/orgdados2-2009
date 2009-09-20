@@ -57,7 +57,8 @@ public class Principal {
 							try{
 								int elementoInsercao = Integer.parseInt(leitor.readLine());
 								System.out.println("Digite o dado a ser inserido:");
-								String dado = leitor.readLine();
+								String dado = " ";
+								dado = leitor.readLine();
 								hash.insercao(elementoInsercao, dado);
 								
 							}
