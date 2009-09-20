@@ -90,6 +90,8 @@ public class Principal {
 							int index = hash.busca(elementoBusca);
 							if(Math.abs(hash.getHash().get(index).getEstado()) == 1 && hash.getHash().get(index).getChave() == elementoBusca){
 								System.out.println("O elemento " +elementoBusca+ " está na hash");
+								System.out.println("A seguir será impresso o dado contido nele:");
+								System.out.println(hash.getHash().get(index).getDado());
 							}
 							else{
 								System.out.println("O elemento " +elementoBusca+ " não está na hash");
