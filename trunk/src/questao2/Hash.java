@@ -68,7 +68,7 @@ public class Hash {
 			return index;
 		}
 		
-		void insercao(int elemento){
+		void insercao(int elemento, String dado){
 			int index = busca(elemento);
 			//System.out.println(index + "," + elemento + "," + (Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento));
 			if(hash.get(index).getChave() == elemento)
@@ -80,6 +80,7 @@ public class Hash {
 				if(hash.get(hashcode(elemento)).getChave() == Celula.vazio)
 				{
 					hash.get(hashcode(elemento)).setChave(elemento);
+					hash.get(hashcode(elemento)).setDado(dado);
 				}
 				else{
 					for(int i = tamanho-1; i >= 0; i--)
@@ -87,6 +88,7 @@ public class Hash {
 						if(hash.get(i).getChave() == Celula.vazio)
 						{
 							hash.get(i).setChave(elemento);
+							hash.get(i).setDado(dado);
 							hash.get(index).setProximoElemento(hash.get(i));
 							break;
 						}

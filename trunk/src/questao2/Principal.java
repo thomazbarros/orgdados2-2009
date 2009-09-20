@@ -18,10 +18,14 @@ public class Principal {
 		
 		BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));  
 		int tamanho = 0;
-		
-		System.out.println("Digite o número de elementos da hash:");
 		try{
+			while (tamanho <= 0){
+			System.out.println("Digite o número de elementos da hash:");
 			tamanho = Integer.parseInt(leitor.readLine());
+				if(tamanho <=0){
+					System.out.println("Tamanho inválido. Tente novamente.");
+				}
+			}
 		}
 		catch(Exception e){}
 		
@@ -41,16 +45,20 @@ public class Principal {
 			
 				switch(opcao){
 				
-					case 1 : 
+					case 1 : 			
 						
-						System.out.println("Digite o elemento que deseja inserir:");
 						if(hash.isCheio()){
 							System.out.println("A hash está cheia.");
 						}
 						else{
+							System.out.println("Digite o elemento que deseja inserir:");
 							try{
 								int elementoInsercao = Integer.parseInt(leitor.readLine());
-								hash.insercao(elementoInsercao);
+								System.out.println("Digite o dado a ser inserido:");
+								String dado = " ";
+								dado = leitor.readLine();
+								hash.insercao(elementoInsercao, dado);
+								
 							}
 							catch(Exception e){}
 						}
@@ -81,6 +89,8 @@ public class Principal {
 							int index = hash.busca(elementoBusca);
 							if(hash.getHash().get(index).getChave() == elementoBusca){
 								System.out.println("O elemento " +elementoBusca+ " está na hash");
+								System.out.println("Seu conteúdo será transcrito a seguir:");
+								System.out.println(hash.getHash().get(index).getDado());
 							}
 							else{
 								System.out.println("O elemento " +elementoBusca+ " não está na hash");
