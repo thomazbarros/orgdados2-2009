@@ -40,8 +40,6 @@ public class Principal {
 			System.out.println("3-Buscar um elemento");
 			System.out.println("4-Sair");
 			
-			System.out.println(hash.getHash());
-			
 			try{
 				int opcao = Integer.parseInt(leitor.readLine());
 			
