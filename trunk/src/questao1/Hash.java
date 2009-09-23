@@ -26,10 +26,9 @@ public class Hash {
 			for(int i = 0; i < tamanho; i++){
 				hash.add(new Celula()); //Criando as células em cada posição do Array.
 			}
-			System.out.println("TAMANHO DA HASH :" + hash.size());
 		}
 		
-		int hashcode(int elemento)
+		int hashcode(int elemento)//Função da hash
 		{
 			return elemento%tamanho; 
 		}
@@ -50,13 +49,16 @@ public class Hash {
 			while(hash.get(index).getEstado() < 0){
 						
 					if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
+						//elemento encontrado
 						return index;
 					}	
 						
-					else if(hash.get(index).getProximoElemento() == null){
+					else if(hash.get(index).getProximoElemento() == null){ 
+						//Caso o próximo elemento seja nulo, retorna o index atual
 						return index;
 					}
 					else{
+						//Passa para o próximo elemento
 						index = hash.indexOf(hash.get(index).getProximoElemento());
 					}
 					
@@ -65,22 +67,24 @@ public class Hash {
 			return index;
 		}
 		
-		void insercao(int elemento, String dado){
+		void insercao(int elemento, String dado){ 
+			//Método responsável pela inserção de novos elementos, utiliza como critério os estados 
 			int index = busca(elemento);
-			//System.out.println(index + "," + elemento + "," + (Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento));
+			//Verifica se o elemento já existe na hash
 			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento)
 			{
 					System.out.println("A tabela já contém o elemento desejado.");
 					return;
 			}
 			else{
-				if(hash.get(hashcode(elemento)).getEstado() == 0)
+				if(hash.get(hashcode(elemento)).getEstado() == 0) //quando o estado é 0, a inserção é imediata
 				{
 					hash.get(hashcode(elemento)).setChave(elemento);
 					hash.get(hashcode(elemento)).setEstado(1);
 					hash.get(hashcode(elemento)).setDado(dado);
 				}
 				else{
+					//quando o estado é diferente de 0, é necessário atualizar os links e os estados
 					for(int i = tamanho-1; i >= 0; i--)
 					{
 						if(Math.abs(hash.get(i).getEstado()) != 1)
@@ -101,6 +105,7 @@ public class Hash {
 		
 		void remocao(int elemento){
 			int index = busca(elemento);
+			//Verifica se o elemento está presente na hash
 			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
 				if(hash.get(index).getEstado() < 0){ /*verificando se é o fim ou não da cadeia */
 					hash.get(index).setEstado(-2);
