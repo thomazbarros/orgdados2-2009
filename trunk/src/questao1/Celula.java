@@ -12,7 +12,7 @@ package questao1;
 public class Celula {
 	private int chave;
 	private int estado;
-	private Celula proximoElemento;
+	private Celula proximoElemento; //é o link para o próximo elemento.
 	private String dado;
 	
 	public Celula(){
