@@ -76,6 +76,11 @@ public class Hash {
 					return;
 			}
 			else{
+				if(hash.get(index).getChave() == Celula.vazio && hashcode(elemento) == index){
+					hash.get(index).setChave(elemento);
+					hash.get(index).setDado(dado);
+				}
+				else{
 					for(int i = tamanho-1; i >= 0; i--)
 					{
 						if(hash.get(i).getChave() == Celula.vazio)
@@ -87,7 +92,7 @@ public class Hash {
 						}
 					}
 				}
-	
+			}
 			System.out.println("Número incluído com sucesso.");
 			numeroElementos++;
 		}
