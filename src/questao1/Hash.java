@@ -14,19 +14,17 @@ import java.util.ArrayList;
 
 public class Hash {
 	private
-		ArrayList<Celula> hash;
-		int tamanho;
-		int celulasUsadas;
-		int indexAnterior;
-		int numeroElementos;
+		ArrayList<Celula> hash; //Conjunto que células que representa a hash.
+		int tamanho; //tamanho da Hash.
+		int numeroElementos; //Diz quantos elementos estão na Hash.
 	
-	public Hash(int tamanho)
+	public Hash(int tamanho) //Construtor
 		{
-			numeroElementos = 0;
+			numeroElementos = 0; // Inicializando o número de elementos com zero.
 			this.tamanho = tamanho;
-			hash = new ArrayList<Celula>(tamanho);
+			hash = new ArrayList<Celula>(tamanho); //inicializando o Array.
 			for(int i = 0; i < tamanho; i++){
-				hash.add(new Celula());
+				hash.add(new Celula()); //Criando as células em cada posição do Array.
 			}
 			System.out.println("TAMANHO DA HASH :" + hash.size());
 		}
@@ -36,12 +34,12 @@ public class Hash {
 			return elemento%tamanho; 
 		}
 		
-		boolean isCheio()
+		boolean isCheio() //Verifica se a Hash está cheia.
 		{
-			return numeroElementos == tamanho;
+			return numeroElementos == tamanho; 
 		}
 		
-		boolean isVazio()
+		boolean isVazio() //Verifica se a Hash está vazia.
 		{
 			return numeroElementos == 0;
 		}
@@ -49,7 +47,6 @@ public class Hash {
 		int busca(int elemento)
 		{
 			int index = hashcode(elemento);
-			indexAnterior = -1;
 			while(hash.get(index).getEstado() < 0){
 						
 					if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
@@ -60,7 +57,6 @@ public class Hash {
 						return index;
 					}
 					else{
-						indexAnterior = index;
 						index = hash.indexOf(hash.get(index).getProximoElemento());
 					}
 					
@@ -108,9 +104,6 @@ public class Hash {
 			if(Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento){
 				if(hash.get(index).getEstado() < 0){ /*verificando se é o fim ou não da cadeia */
 					hash.get(index).setEstado(-2);
-					if (indexAnterior != -1){
-						hash.get(indexAnterior).setProximoElemento(hash.get(index).getProximoElemento());
-					}
 				}
 				else{
 					hash.get(index).setEstado(2);
