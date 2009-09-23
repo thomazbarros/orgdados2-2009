@@ -11,13 +11,14 @@ package questao3;
 public class Celula {
 	private int chave;
 	private Celula proximoElemento;
-	public static final int vazio = -999999;
+	public static final int vazio = -999999; //Chave reservada para um estado vazio
+	private String dado;
 	
 	public Celula(){
 		chave = vazio;
 		proximoElemento = null;
 	}
-
+	
 	public int getChave() {
 		return chave;
 	}
@@ -29,16 +30,17 @@ public class Celula {
 	public Celula getProximoElemento() {
 		return proximoElemento;
 	}
+	
+	public String getDado() {
+		return dado;
+	}
+
+	public void setDado(String dado) {
+		this.dado = dado;
+	}
 
 	public void setProximoElemento(Celula proximoElemento) {
 		this.proximoElemento = proximoElemento;
 	}
-	
-	public String toString(){
-		if(proximoElemento != null){
-			return "Chave :" + chave + "Proximo :" + proximoElemento.getChave() ;
-		}
-		return "Chave :" + chave + "Proximo :" + proximoElemento;
-	}
-	
+		
 }
