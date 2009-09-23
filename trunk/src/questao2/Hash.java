@@ -13,34 +13,32 @@ import java.util.ArrayList;
 
 public class Hash {
 	private
-		ArrayList<Celula> hash;
-		int tamanho;
-		int celulasUsadas;
-		int indexAnterior;
-		int numeroElementos;
+		ArrayList<Celula> hash; 
+		int tamanho; //tamanho da hash
+		int indexAnterior; //Index utilizada na remoção para atualizar o link do elemento anterior
+		int numeroElementos; //Numero de elementos ocupados na hash
 	
-	public Hash(int tamanho)
+	public Hash(int tamanho) 
 		{
-			numeroElementos = 0;
+			numeroElementos = 0; 
 			this.tamanho = tamanho;
 			hash = new ArrayList<Celula>(tamanho);
 			for(int i = 0; i < tamanho; i++){
 				hash.add(new Celula());
 			}
-			System.out.println("TAMANHO DA HASH :" + hash.size());
 		}
 		
-		int hashcode(int elemento)
+		int hashcode(int elemento)//Método de geração de hash
 		{
 			return elemento%tamanho; 
 		}
 		
-		boolean isCheio()
+		boolean isCheio() //Verifica se a hash está cheia
 		{
 			return numeroElementos == tamanho;
 		}
 		
-		boolean isVazio()
+		boolean isVazio() //Verifica se a hash está vazia
 		{
 			return numeroElementos == 0;
 		}
@@ -48,17 +46,18 @@ public class Hash {
 		int busca(int elemento)
 		{
 			int index = hashcode(elemento);
-			indexAnterior = -1;
+			indexAnterior = -1; //Inicializa o indicador do elemento anterior como "vazio"
 			while(hash.get(index).getChave() != Celula.vazio){
 					
-					if(hash.get(index).getChave() == elemento){
+					if(hash.get(index).getChave() == elemento){ //elemento encontrado
 						return index;
 					}	
 					
-					if(hash.get(index).getProximoElemento() == null){
+					if(hash.get(index).getProximoElemento() == null){ //o próximo elemento é nulo
 						return index;
 					}
 					else{
+						//continua a busca no próximo elemento
 						indexAnterior = index;
 						index = hash.indexOf(hash.get(index).getProximoElemento());
 					}
@@ -70,19 +69,13 @@ public class Hash {
 		
 		void insercao(int elemento, String dado){
 			int index = busca(elemento);
-			//System.out.println(index + "," + elemento + "," + (Math.abs(hash.get(index).getEstado()) == 1 && hash.get(index).getChave() == elemento));
-			if(hash.get(index).getChave() == elemento)
+			
+			if(hash.get(index).getChave() == elemento) //verifica se o elemento já está na hash
 			{
 					System.out.println("A tabela já contém o elemento desejado.");
 					return;
 			}
 			else{
-				if(hash.get(hashcode(elemento)).getChave() == Celula.vazio)
-				{
-					hash.get(hashcode(elemento)).setChave(elemento);
-					hash.get(hashcode(elemento)).setDado(dado);
-				}
-				else{
 					for(int i = tamanho-1; i >= 0; i--)
 					{
 						if(hash.get(i).getChave() == Celula.vazio)
@@ -94,7 +87,7 @@ public class Hash {
 						}
 					}
 				}
-			}
+	
 			System.out.println("Número incluído com sucesso.");
 			numeroElementos++;
 		}
