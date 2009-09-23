@@ -1,5 +1,5 @@
 /*
- * Questão 2 do primeiro trabalho de Organização de Dados II
+ * Questão 3 do primeiro trabalho de Organização de Dados II
  * Desenvolvido por:
  * 					Carolina Szkruc Carvalho DRE: 107413394
  * 					Gustavo Henrique Alves dos Santos DRE: 107363191
