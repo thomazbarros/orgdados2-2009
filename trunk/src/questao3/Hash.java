@@ -119,11 +119,12 @@ public class Hash {
 			}
 		}
 		
-		public void correcao(int index)
+		public void correcao(int index) //realoca recursivamente os elementos
 		{
+			int novoindex;
+			
 			if(hash.get(index).getProximoElemento() != null)
 			{
-				int novoindex;
 				novoindex = hash.indexOf(hash.get(index).getProximoElemento());
 				hash.set(index,hash.get(novoindex));
 				correcao(novoindex);
