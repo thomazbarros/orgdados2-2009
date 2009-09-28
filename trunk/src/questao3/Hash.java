@@ -103,20 +103,36 @@ public class Hash {
 		
 		void remocao(int elemento){
 			int index = busca(elemento);
+			
 			if(hash.get(index).getChave() == elemento){
-				if(hash.get(index).getProximoElemento() != null){
+				while(hash.get(index).getProximoElemento() != null){
 					//System.out.println(hash.get(index).getProximoElemento().getChave());
 					//System.out.println(hash.get(index).getChave());
 					hash.get(index).setChave(hash.get(index).getProximoElemento().getChave());
 					hash.get(index).setDado(hash.get(index).getProximoElemento().getDado());
 					//hash.get(index).getProximoElemento().setChave(Celula.vazio);
+//					if(hash.get(index).getProximoElemento().getProximoElemento() != null){
+				//	if(hash.get(index).getProximoElemento().getProximoElemento() == null){
+				//		index = hash.indexOf(hash.get(index).getProximoElemento());
+			//			hash.get(index).setProximoElemento(null);
+			//		}
+				//	else{
 					hash.get(index).setProximoElemento(hash.get(index).getProximoElemento());
-				}else{
-					hash.get(index).setChave(Celula.vazio);
-					hash.get(index).setDado("");
-					hash.get(index).setProximoElemento(null);
+					indexAnterior = index;
+					index = hash.indexOf(hash.get(index).getProximoElemento());
+				//	}
+					//else{
+					//	index = hash.indexOf(hash.get(index).getProximoElemento());
 				}
 				
+				if(indexAnterior != -1){
+					hash.get(indexAnterior).setProximoElemento(null);
+				}
+				
+				hash.get(index).setChave(Celula.vazio);
+				hash.get(index).setDado(null);
+				hash.get(index).setProximoElemento(null);
+			
 				System.out.println("Número removido com sucesso.");
 				numeroElementos--;
 //				correcao(hash.indexOf(hash.get(index).getProximoElemento()));
