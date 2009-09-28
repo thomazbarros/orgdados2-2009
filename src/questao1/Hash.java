@@ -138,7 +138,7 @@ public class Hash {
 		}
 		
 		public void imprimeHash(ArrayList<Celula> hash, int tamanho){
-			System.out.println("Posição         |Chave              |Dado                |Estado                |Link                ");
+			System.out.println("|Posição|         |Chave|             |Dado|               |Estado|                |Link|                ");
 			for(int posicao=0; posicao<tamanho; posicao++){
 				int prox = hash.indexOf(hash.get(posicao).getProximoElemento());
 				if (prox == -1){
