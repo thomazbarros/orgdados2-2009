@@ -66,12 +66,11 @@ public class Principal {
 						break;
 						
 					case 2 : 
-						
-						System.out.println("Digite o elemento que deseja remover:");
 						if(hash.isVazio()){
 							System.out.println("A hash está vazia.");
 						}
 						else{
+							System.out.println("Digite o elemento que deseja remover:");
 							try{
 								int elementoRemocao = Integer.parseInt(leitor.readLine());
 								hash.remocao(elementoRemocao);
@@ -82,22 +81,25 @@ public class Principal {
 						break;						
 						
 					case 3 : 
-						
-						System.out.println("Digite o elemento que deseja procurar");
-						try{
-							int elementoBusca = Integer.parseInt(leitor.readLine());
-							int index = hash.busca(elementoBusca);
-							if(hash.getHash().get(index).getChave() == elementoBusca){
-								System.out.println("O elemento " +elementoBusca+ " está na hash");
-								System.out.println("Seu conteúdo será transcrito a seguir:");
-								System.out.println(hash.getHash().get(index).getDado());
-							}
-							else{
-								System.out.println("O elemento " +elementoBusca+ " não está na hash");
-							};
+						if(hash.isVazio()){
+							System.out.println("A hash está vazia.");
 						}
-						catch(Exception e){}
-						
+						else{
+							System.out.println("Digite o elemento que deseja procurar");
+							try{
+								int elementoBusca = Integer.parseInt(leitor.readLine());
+								int index = hash.busca(elementoBusca);
+								if(hash.getHash().get(index).getChave() == elementoBusca){
+									System.out.println("O elemento " +elementoBusca+ " está na hash");
+									System.out.println("Seu conteúdo será transcrito a seguir:");
+									System.out.println(hash.getHash().get(index).getDado());
+								}
+								else{
+									System.out.println("O elemento " +elementoBusca+ " não está na hash");
+								};
+							}
+							catch(Exception e){}
+						}
 						break;
 						
 					case 4 : 

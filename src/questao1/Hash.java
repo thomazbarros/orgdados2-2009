@@ -92,7 +92,12 @@ public class Hash {
 							hash.get(i).setChave(elemento);
 							hash.get(i).setEstado(1);
 							hash.get(i).setDado(dado);
-							hash.get(index).setEstado(-1);
+							if(Math.abs(hash.get(index).getEstado()) == 1){
+								hash.get(index).setEstado(-1);
+							}
+							else{
+									hash.get(index).setEstado(-2);
+							}
 							hash.get(index).setProximoElemento(hash.get(i));
 							break;
 						}
