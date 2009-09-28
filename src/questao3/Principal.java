@@ -30,7 +30,7 @@ public class Principal {
 		catch(Exception e){}
 		
 		Hash hash = new Hash(tamanho);
-		
+		hash.imprimeHash(hash.getHash(), tamanho);
 		while(true)
 		{
 			System.out.println("Digite o que deseja fazer :");
@@ -112,6 +112,7 @@ public class Principal {
 				if(opcao == 4){
 					break;
 				}
+				hash.imprimeHash(hash.getHash(), tamanho);
 			}
 			catch(Exception e){}			
 		}	
