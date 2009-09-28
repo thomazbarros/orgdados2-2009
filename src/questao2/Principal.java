@@ -30,7 +30,7 @@ public class Principal {
 		catch(Exception e){}
 		
 		Hash hash = new Hash(tamanho);
-		
+		hash.imprimeHash(hash.getHash(), tamanho);
 		while(true)
 		{
 			System.out.println("Digite o que deseja fazer :");
@@ -38,7 +38,7 @@ public class Principal {
 			System.out.println("2-Remover um elemento");
 			System.out.println("3-Buscar um elemento");
 			System.out.println("4-Sair");
-			System.out.println(hash.getHash());
+			
 			
 			try{
 				int opcao = Integer.parseInt(leitor.readLine());
@@ -112,6 +112,7 @@ public class Principal {
 				if(opcao == 4){
 					break;
 				}
+				hash.imprimeHash(hash.getHash(), tamanho);
 			}
 			catch(Exception e){}			
 		}	
