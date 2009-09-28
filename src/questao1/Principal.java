@@ -114,7 +114,7 @@ public class Principal {
 				}
 				hash.imprimeHash(hash.getHash(), tamanho);
 			}
-			catch(Exception e){}			
+			catch(Exception e){}		
 		}	
 	}
 }
