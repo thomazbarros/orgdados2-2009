@@ -10,8 +10,11 @@ package questao2;
 
 import java.util.ArrayList;
 
+import questao2.Celula;
+
 
 public class Hash {
+	public static final int vazio = -999999;
 	private
 		ArrayList<Celula> hash; 
 		int tamanho; //tamanho da hash
@@ -133,4 +136,55 @@ public class Hash {
 			this.tamanho = tamanho;
 		}
 
+		public void imprimeHash(ArrayList<Celula> hash, int tamanho){
+			System.out.println("Posição         |Chave              |Dado                |Link                ");
+			for(int posicao=0; posicao<tamanho; posicao++){
+				int prox = hash.indexOf(hash.get(posicao).getProximoElemento());
+				if (prox == -1){
+					if(hash.get(posicao).getChave() == vazio){
+						System.out.println( "|"
+								+posicao
+								+ "|                |" 
+								+ "vazio"
+								+ "|                |"
+								+ hash.get(posicao).getDado()
+								+ "|                |"  
+								+ "null |" );
+						
+					}else{
+					System.out.println( "|"
+										+posicao
+										+ "|                |" 
+										+ hash.get(posicao).getChave()
+										+ "|                |"
+										+ hash.get(posicao).getDado()
+										+ "|                |"  
+										+ "null |" );
+					}
+				}else{
+					if(hash.get(posicao).getChave() == vazio){
+						System.out.println( "|"
+								+posicao 
+								+ "|                |"
+								+ "vazio"
+								+ "|                |"
+								+ hash.get(posicao).getDado()
+								+"|                |"
+								+ prox +"|");					
+					}else{
+						System.out.println( "|"
+										+posicao 
+										+ "|                |"
+										+ hash.get(posicao).getChave() 
+										+ "|                |"
+										+ hash.get(posicao).getDado()
+										+"|                |"
+//										+ hash.get(posicao).getEstado()
+//										+"                |"
+										+ prox +"|");
+					}
+				}
+				
+			}
+		}		
 }
