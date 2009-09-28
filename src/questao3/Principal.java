@@ -1,7 +1,8 @@
 /*
  * Questão 3 do primeiro trabalho de Organização de Dados II
  * Desenvolvido por:
- * 					Carolina Szkruc Carvalho DRE: 107413394
+ * 		11
+ * 			Carolina Szkruc Carvalho DRE: 107413394
  * 					Gustavo Henrique Alves dos Santos DRE: 107363191
  * 					Leopoldo Andre Dutra Lusquino Filho DRE: 107363002
  * 					Thomaz Avila Barros DRE:107363028
@@ -38,7 +39,7 @@ public class Principal {
 			System.out.println("2-Remover um elemento");
 			System.out.println("3-Buscar um elemento");
 			System.out.println("4-Sair");
-			System.out.println(hash.getHash());
+
 			
 			try{
 				int opcao = Integer.parseInt(leitor.readLine());
