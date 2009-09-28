@@ -100,6 +100,7 @@ public class Hash {
 			numeroElementos++;
 		}
 		
+		
 		void remocao(int elemento){
 			int index = busca(elemento);
 			if(hash.get(index).getChave() == elemento){
@@ -125,6 +126,8 @@ public class Hash {
 			}
 		}
 		
+		
+		//ENTRA NO MSN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	/*	public void correcao(int index) //realoca recursivamente os elementos
 		{
 			//int novoindex;
