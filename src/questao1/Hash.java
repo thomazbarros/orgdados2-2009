@@ -162,11 +162,11 @@ public class Hash {
 										+posicao 
 										+ "|                |"
 										+ hash.get(posicao).getChave() 
-										+ "                |"
+										+ "|                |"
 										+ hash.get(posicao).getDado()
-										+"                |"
+										+"|                |"
 										+ hash.get(posicao).getEstado()
-										+"                |"
+										+"|                |"
 										+ prox +"|");
 				}
 				

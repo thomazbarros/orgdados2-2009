@@ -106,23 +106,11 @@ public class Hash {
 			
 			if(hash.get(index).getChave() == elemento){
 				while(hash.get(index).getProximoElemento() != null){
-					//System.out.println(hash.get(index).getProximoElemento().getChave());
-					//System.out.println(hash.get(index).getChave());
 					hash.get(index).setChave(hash.get(index).getProximoElemento().getChave());
 					hash.get(index).setDado(hash.get(index).getProximoElemento().getDado());
-					//hash.get(index).getProximoElemento().setChave(Celula.vazio);
-//					if(hash.get(index).getProximoElemento().getProximoElemento() != null){
-				//	if(hash.get(index).getProximoElemento().getProximoElemento() == null){
-				//		index = hash.indexOf(hash.get(index).getProximoElemento());
-			//			hash.get(index).setProximoElemento(null);
-			//		}
-				//	else{
 					hash.get(index).setProximoElemento(hash.get(index).getProximoElemento());
 					indexAnterior = index;
 					index = hash.indexOf(hash.get(index).getProximoElemento());
-				//	}
-					//else{
-					//	index = hash.indexOf(hash.get(index).getProximoElemento());
 				}
 				
 				if(indexAnterior != -1){
@@ -135,7 +123,6 @@ public class Hash {
 			
 				System.out.println("Número removido com sucesso.");
 				numeroElementos--;
-//				correcao(hash.indexOf(hash.get(index).getProximoElemento()));
 			}
 			else{
 				System.out.println("A tabela não contém o elemento desejado.");
@@ -143,60 +130,6 @@ public class Hash {
 		}
 		
 		
-		//ENTRA NO MSN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	/*	public void correcao(int index) //realoca recursivamente os elementos
-		{
-			//int novoindex;
-			
-			System.out.println(index);
-			if(hash.get(index).getChave() != Celula.vazio)
-			{
-				System.out.println("NAONULO");
-
-				//novoindex = hash.indexOf(hash.get(index).getProximoElemento());
-				//hash.set(index,hash.get(novoindex));
-				//novoindex
-				
-				//if(hash.get(index).getProximoElemento() == null){
-					//hash.get(index).getProximoElemento().setChave(Celula.vazio);
-					
-				//}
-				//else{
-				/*if(hash.get(index).getProximoElemento().getProximoElemento() == null){
-					hash.get(index).getProximoElemento().setProximoElemento(null);
-					hash.get(index).getProximoElemento().setChave(vazio);
-					hash.get(index).getProximoElemento().setDado(null);
-					hash.get(index).getProximoElemento().setProximoElemento(null);
-				}*/
-	/*			
-				if(hash.get(index).getChave() == hash.get(index).getProximoElemento().getChave())
-				{
-					hash.get(index).getProximoElemento().setProximoElemento(null);
-					hash.get(index).getProximoElemento().setChave(vazio);
-					hash.get(index).getProximoElemento().setDado(null);
-					hash.get(index).setProximoElemento(null);
-				}
-				else
-				{
-					hash.get(index).setChave(hash.get(index).getProximoElemento().getChave());
-					hash.get(index).setDado(hash.get(index).getProximoElemento().getDado());
-				//hash.get(index).getProximoElemento().setChave(Celula.vazio);
-					hash.get(index).setProximoElemento(hash.get(index).getProximoElemento().getProximoElemento());
-					
-					correcao(hash.indexOf(hash.get(index).getProximoElemento()));
-				}
-			}
-			else
-			{
-				System.out.println("NULO");
-				hash.get(index).setChave(Celula.vazio);
-				hash.get(index).setDado(null);
-			}
-		}
-*/
-		void remocaoCompleta(int elemento){
-			
-		}
 		public ArrayList<Celula> getHash() {
 			return hash;
 		}
