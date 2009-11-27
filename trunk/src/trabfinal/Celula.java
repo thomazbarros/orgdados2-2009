@@ -5,6 +5,13 @@ public class Celula {
 	private int chave, contador;
 	private Celula anterior, proximo;
 		
+	
+	public Celula(int chave, Celula anterior){
+		this.chave = chave;
+		contador = 0;
+		this.anterior = anterior;
+		proximo = null;
+	}
 		public int getChave() {
 			return chave;
 		}
