@@ -10,19 +10,18 @@ public class Lista {
 		this.celula = celula;
 	}
 	
-	public void arruma(){
+	public void arruma(Celula celula2){
 		switch(tipo){
 		  case 1:
-			 // moverParaFrente();
+			 moverParaFrente(celula2);
 		  case 2:
-			//  transposicao();	
+			transposicao(celula2);	
 		  case 3:
 			// contadorDeFrequencia();
 		}
 	}
 	
-	public void moverParaFrente(Celula celula2)
-	{
+	public void moverParaFrente(Celula celula2){
 		celula2.getAnterior().setProximo(celula2.getProximo());
 		celula2.getProximo().setAnterior(celula2.getAnterior());
 		celula2.setAnterior(null);
@@ -30,5 +29,14 @@ public class Lista {
 		celula.setAnterior(celula2);
 		celula = celula2;
 	}
-
+	
+	public void transposicao(Celula celula2){
+		Celula anterior = celula2.getAnterior();
+		anterior.setProximo(celula2.getProximo());
+		anterior.setAnterior(celula2);
+		celula2.getAnterior().getAnterior().setProximo(celula2);
+		celula2.setProximo(anterior);
+	}
+	
+	
 }
