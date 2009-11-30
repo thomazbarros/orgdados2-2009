@@ -17,7 +17,7 @@ public static void main(String[] args) {
 		//System.out.println("5 - Métodos híbridos");
 		int leitura = 0;
 		leitura = Integer.parseInt(leitor.readLine());
-		while ((leitura<= 0 )||( leitura > 5)){
+		while ((leitura<= 0 )||( leitura > 3)){ //Provisoriamente será 3
 			System.out.println("Tipo inválido. Tente novamente.");
 				leitura = Integer.parseInt(leitor.readLine());
 				}
