@@ -92,7 +92,8 @@ public class Principal {
 				}
 			}
 			catch (Exception e){
-				System.out.println("Ih! Deu xabu. E agora?");
+				//System.out.println("Ih! Deu xabu. E agora?");
+				e.printStackTrace();
 			}
 		}
 	}
