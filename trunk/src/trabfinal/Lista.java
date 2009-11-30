@@ -31,6 +31,7 @@ public class Lista {
 		if(celula.getChave() != chave)
 		{
 			celula = new Celula(chave, ultima);
+			ultima.setProximo(celula);
 			ultima = celula;
 		}
 	}
@@ -52,11 +53,11 @@ public class Lista {
 		  case 2:
 			transposicao(celula);	
 		  case 3:
-			  contadorDeFrequencia(celula);
+			contadorDeFrequencia(celula);
 		}
 	}
 	
-	public void moverParaFrente(Celula celula){
+	public void moverParaFrente(Celula celula){ //ainda falta tratar se a célula é o nó-cabeça
 		celula.getAnterior().setProximo(celula.getProximo());
 		if(celula.getProximo() != null)
 		{
@@ -68,7 +69,7 @@ public class Lista {
 		inicial = celula;
 	}
 	
-	public void transposicao(Celula celula){
+	public void transposicao(Celula celula){ //ainda falta tratar se a célula é o nó-cabeça
 		Celula anterior = celula.getAnterior();
 		anterior.setProximo(celula.getProximo());
 		anterior.setAnterior(celula);

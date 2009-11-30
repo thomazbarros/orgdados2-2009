@@ -2,13 +2,13 @@ package trabfinal;
 
 public class Celula {
 	
-	private int chave, contador;
+	private int chave, contadorFrequencia;
 	private Celula anterior, proximo;
 		
 	
 	public Celula(int chave, Celula anterior){
 		this.chave = chave;
-		contador = 0;
+		contadorFrequencia = 0;
 		this.anterior = anterior;
 		proximo = null;
 	}
@@ -22,11 +22,11 @@ public class Celula {
 	}
 	
 	public int getContador() {
-			return contador;
+			return contadorFrequencia;
 	}
 		
 	public void setContador(int contador) {
-			this.contador = contador;
+			this.contadorFrequencia = contador;
 	}
 	
 	public Celula getAnterior() {
