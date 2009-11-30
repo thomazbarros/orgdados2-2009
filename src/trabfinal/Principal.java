@@ -53,7 +53,7 @@ public class Principal {
 	}
 	void moveParaFrente(Principal principal){
 		int status = 0;
-		//Lista lista = new lista()
+		Lista lista = new Lista(1);
 		while(status != -1){
 			System.out.println("Digite o que você deseja fazer:");
 			System.out.println("1 - Inserir elemento");
@@ -62,18 +62,26 @@ public class Principal {
 			System.out.println("4 - Sair");
 			try{
 				int leitura = Integer.parseInt(principal.getLeitor().readLine());
-				while ((leitura<= 0 )||( leitura > 4)){ //Provisoriamente será 3
+				while ((leitura<= 0 )||( leitura > 4)){ 
 					System.out.println("Escolha inválida. Tente novamente.");
 					leitura = Integer.parseInt(principal.getLeitor().readLine());
 				}
 				switch (leitura){
 					case 1:
-						
+						System.out.println("Digite o elemento a ser inserido:");
+						lista.insercao(Integer.parseInt(principal.getLeitor().readLine()));
 						break;
+
 					case 2:
+						System.out.println("Digite o elemento a ser buscado:");
+						lista.busca(Integer.parseInt(principal.getLeitor().readLine()));
 						break;
+						
 					case 3:
+						System.out.println("Digite o elemento a ser removido:");
+						lista.remocao(Integer.parseInt(principal.getLeitor().readLine()));
 						break;
+
 					case 4:
 						status = -1;
 						break;
