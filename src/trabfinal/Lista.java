@@ -10,7 +10,7 @@ public class Lista {
 		Celula inicial = null;
 	}
 
-	public Lista(int tipo, int k) {
+	public Lista(int tipo,int k) {
 		this.tipo = tipo;
 		this.k = k;
 		Celula inicial = null;
