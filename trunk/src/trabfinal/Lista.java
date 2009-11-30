@@ -64,23 +64,27 @@ public class Lista {
 	}
 	
 	public void moverParaFrente(Celula celula){ //ainda falta tratar se a célula é o nó-cabeça
-		celula.getAnterior().setProximo(celula.getProximo());
-		if(celula.getProximo() != null)
-		{
-			celula.getProximo().setAnterior(celula.getAnterior());
+		if(celula.getAnterior() == null){
+			celula.getAnterior().setProximo(celula.getProximo());
+			if(celula.getProximo() != null)
+			{
+				celula.getProximo().setAnterior(celula.getAnterior());
+			}
+			celula.setAnterior(null);
+			celula.setProximo(inicial);
+			inicial.setAnterior(celula);
+			inicial = celula;
 		}
-		celula.setAnterior(null);
-		celula.setProximo(inicial);
-		inicial.setAnterior(celula);
-		inicial = celula;
 	}
 	
 	public void transposicao(Celula celula){ //ainda falta tratar se a célula é o nó-cabeça
-		Celula anterior = celula.getAnterior();
-		anterior.setProximo(celula.getProximo());
-		anterior.setAnterior(celula);
-		celula.getAnterior().getAnterior().setProximo(celula);
-		celula.setProximo(anterior);
+		if(celula.getAnterior() != null){
+			Celula anterior = celula.getAnterior();
+			anterior.setProximo(celula.getProximo());
+			anterior.setAnterior(celula);
+			celula.getAnterior().getAnterior().setProximo(celula);
+			celula.setProximo(anterior);
+		}
 	}
 	
 	public void contadorDeFrequencia(Celula celula){
@@ -107,10 +111,12 @@ public class Lista {
 	}
 
 
-public void moverParaFrenteK(Celula celula){ //ainda falta tratar se a célula é o nó-cabeça
-	for(int i = 0; i < k; i++)
-	{
-		moverParaFrente(celula);
+	public void moverParaFrenteK(Celula celula){
+		for(int i = 0; i < k; i++)
+		{
+			if(celula.getAnterior() != null){
+				moverParaFrente(celula);
+			}
+		}
 	}
-}
 }
