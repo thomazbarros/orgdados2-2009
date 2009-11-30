@@ -41,7 +41,6 @@ public class Lista {
 		
 		if(celula == null){
 			celula = new Celula(chave, ultima);
-			ultima.setProximo(celula);
 			ultima = celula;
 			inicial = celula;
 			System.out.println("Elemento inserido com sucesso.");
