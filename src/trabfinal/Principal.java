@@ -29,7 +29,7 @@ public class Principal {
 		
 		switch (leitura){
 		case 1:
-			principal.moveParaFrente();
+			principal.moveParaFrente(principal);
 			break;
 		case 2:
 			principal.transpoe();
@@ -49,10 +49,20 @@ public class Principal {
 	catch(Exception e){}
 
 	}
-	void moveParaFrente(){
+	void moveParaFrente(Principal principal){
 		int status = 0;
 		while(status != -1){
-			
+			System.out.println("Digite o que você deseja fazer:");
+			System.out.println("1 - Inserir elemento");
+			System.out.println("2 - Buscar elemento");
+			System.out.println("3 - Remover elemento");
+			System.out.println("4 - Sair");
+			try{
+				int leitura = Integer.parseInt(principal.getLeitor().readLine());
+			}
+			catch (Exception e){
+				System.out.println("Ih! Deu xabu. E agora?");
+			}
 		}
 	}
 	

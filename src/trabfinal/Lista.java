@@ -2,7 +2,7 @@ package trabfinal;
 
 public class Lista {
 
-	private int tipo;
+	private int tipo, k;
 	private Celula inicial, ultima;
 	
 	public Lista(int tipo, Celula inicial){
@@ -80,16 +80,31 @@ public class Lista {
 	public void contadorDeFrequencia(Celula celula){
 		celula.setContador(celula.getContador()+1);
 		
-		celula = inicial;
-		
-		while(celula.getProximo() != null)
+		while(celula.getAnterior() != null)
 		{
-			if(celula.getContador() < celula.getProximo().getContador())
+			if(celula.getContador() > celula.getAnterior().getContador())
 			{
-				transposicao(celula.getProximo());
+				transposicao(celula);
 			}
-			
-			celula = celula.getProximo();
+		}
+		
+		if(celula.getAnterior() == inicial)
+		{
+			if(celula.getContador() > inicial.getContador())
+			{
+				inicial.setProximo(celula.getProximo());
+				celula.setProximo(inicial);
+				celula.setAnterior(null);
+				inicial = celula;
+			}
 		}
 	}
+
+
+public void moverParaFrenteK(Celula celula){ //ainda falta tratar se a célula é o nó-cabeça
+	for(int i = 0; i < k; i++)
+	{
+		moverParaFrente(celula);
+	}
+}
 }
