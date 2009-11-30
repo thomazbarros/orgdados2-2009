@@ -25,35 +25,21 @@ public class Principal {
 			System.out.println("Tipo inválido. Tente novamente.");
 			leitura = Integer.parseInt(principal.getLeitor().readLine());
 		}
-		
-		switch (leitura){
-		case 1:
-			principal.moveParaFrente(principal);
-			break;
-		case 2:
-			principal.transpoe();
-			break;
-		case 3:
-			principal.contaFrequencia();
-			break;
-		case 4:
-			principal.moveParaFrenteK();
-			break;
-		case 5:
-			System.out.println("Saindo...");
-			break;
-		default: // Apenas uma formalidade. Se tudo estiver certinho, nunca passaremos por aqui.
-			System.out.println("Erro estranho. Não era para passarmos nunca por aqui =P");
-			break;
+		if ((leitura>=1) && (leitura<=3)){
+			principal.opcoes(principal, leitura);
 		}
+		else if(leitura == 4){
+			principal.opcoesK(principal);
+		}
+		System.out.println("Saindo...");
 	}
 
 	catch(Exception e){}
 
 	}
-	void moveParaFrente(Principal principal){
+	void opcoes(Principal principal, int tipo){
 		int status = 0;
-		Lista lista = new Lista(1);
+		Lista lista = new Lista(tipo);
 		while(status != -1){
 			System.out.println("Digite o que você deseja fazer:");
 			System.out.println("1 - Inserir elemento");
@@ -98,19 +84,65 @@ public class Principal {
 		}
 	}
 	
-	void moveParaFrenteK(){
+	void opcoesK(Principal principal){
+		int status = 0;
 		
-	}
-	void transpoe(){
 		
+		while(status != -1){
+			
+			try{
+				System.out.println("Digite o valor de k desejado");
+				Lista lista = new Lista(4, Integer.parseInt(principal.getLeitor().readLine()));
+				
+				System.out.println("Digite o que você deseja fazer:");
+				System.out.println("1 - Inserir elemento");
+				System.out.println("2 - Buscar elemento");
+				System.out.println("3 - Remover elemento");
+				System.out.println("4 - Sair");
+				
+				int leitura = Integer.parseInt(principal.getLeitor().readLine());
+				
+				while ((leitura<= 0 )||( leitura > 4)){ 
+					System.out.println("Escolha inválida. Tente novamente.");
+					leitura = Integer.parseInt(principal.getLeitor().readLine());
+				}
+				
+				switch (leitura){
+				
+					case 1:
+						System.out.println("Digite o elemento a ser inserido:");
+						lista.insercao(Integer.parseInt(principal.getLeitor().readLine()));
+						break;
+
+					case 2:
+						System.out.println("Digite o elemento a ser buscado:");
+						lista.busca(Integer.parseInt(principal.getLeitor().readLine()));
+						break;
+						
+					case 3:
+						System.out.println("Digite o elemento a ser removido:");
+						lista.remocao(Integer.parseInt(principal.getLeitor().readLine()));
+						break;
+
+					case 4:
+						status = -1;
+						break;
+					
+					default://Apenas formalidade...
+						System.out.println("Houston, we have a problem. That was not suppose to happen.");
+						break;
+					
+				}
+			}
+			catch (Exception e){
+				//System.out.println("Ih! Deu xabu. E agora?");
+				e.printStackTrace();
+			}
+		}
 	}
-	void contaFrequencia(){
-		
-	}
+
 	public BufferedReader getLeitor() {
 		return leitor;
 	}
-	public void setLeitor(BufferedReader leitor) {
-		this.leitor = leitor;
-	}
+
 }
