@@ -80,8 +80,7 @@ public class Lista {
 		}
 	}
 
-	public void moverParaFrente(Celula celula) { // ainda falta tratar se a
-													// célula é o nó-cabeça
+	public void moverParaFrente(Celula celula) { 
 		if (celula.getAnterior() == null) {
 			celula.getAnterior().setProximo(celula.getProximo());
 			if (celula.getProximo() != null) {
@@ -94,8 +93,7 @@ public class Lista {
 		}
 	}
 
-	public void transposicao(Celula celula) { // ainda falta tratar se a
-												// célula é o nó-cabeça
+	public void transposicao(Celula celula) { 
 		if (celula.getAnterior() != null) {
 			Celula anterior = celula.getAnterior();
 			anterior.setProximo(celula.getProximo());
