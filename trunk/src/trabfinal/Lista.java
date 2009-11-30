@@ -17,6 +17,11 @@ public class Lista {
 	}
 	
 	public Celula busca(int chave){
+		//
+		if(inicial == null){
+			return inicial;
+		}
+		
 		Celula celula= inicial;
 		
 		while(celula.getProximo() != null)
@@ -34,22 +39,37 @@ public class Lista {
 	public void insercao(int chave){
 		Celula celula = busca(chave);
 		
+		if(celula == null){
+			celula = new Celula(chave, ultima);
+			ultima.setProximo(celula);
+			ultima = celula;
+			inicial = celula;
+			System.out.println("Elemento inserido com sucesso.");
+		}
+		
 		if(celula.getChave() != chave)
 		{
 			celula = new Celula(chave, ultima);
 			ultima.setProximo(celula);
 			ultima = celula;
+			System.out.println("Elemento inserido com sucesso.");
 		}
+		
+		System.out.println("Elemento já está na lista.");
 	}
 	
 	public void remocao(int chave){
 		Celula celula = busca(chave);
-		
+		if(celula == null){
+			System.out.println("A lista está vazia.");
+		}
 		if(celula.getChave() == chave)
 		{
 			celula.getAnterior().setProximo(celula.getProximo());
 			celula.getProximo().setAnterior(celula.getAnterior());
+			System.out.println("Elemento removido com sucesso.");
 		}
+		System.out.println("Elemento não está presente na lista.");
 	}
 	
 	public void arruma(Celula celula){
