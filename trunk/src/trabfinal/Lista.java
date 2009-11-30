@@ -4,10 +4,16 @@ public class Lista {
 
 	private int tipo, k;
 	private Celula inicial, ultima;
-	
-	public Lista(int tipo, Celula inicial){
+
+	public Lista(int tipo){
 		this.tipo = tipo;
-		this.inicial = inicial;
+		Celula inicial = null;
+	}
+	
+	public Lista (int tipo, int k){
+		this.tipo = tipo;
+		this.k = k;
+		Celula inicial = null;
 	}
 	
 	public Celula busca(int chave){

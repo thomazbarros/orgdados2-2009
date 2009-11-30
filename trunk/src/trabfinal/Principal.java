@@ -16,13 +16,12 @@ public class Principal {
 		System.out.println("1 - Mover para a frente;");
 		System.out.println("2 - Transposição;");
 		System.out.println("3 - Contador de frequência;");
-		System.out.println("4 - Sair.");
-		//System.out.println(" 4 - Mover para a frente k");
-		//System.out.println("5 - Métodos híbridos");
+		System.out.println("4 - Montar para a frente 'k'");
+		System.out.println("5 - Sair.");
 		int leitura = 0;
 		Principal principal = new Principal();
 		leitura = Integer.parseInt(principal.getLeitor().readLine());
-		while ((leitura<= 0 )||( leitura > 4)){ //Provisoriamente será 3
+		while ((leitura<= 0 )||( leitura > 5)){ //Provisoriamente será 3
 			System.out.println("Tipo inválido. Tente novamente.");
 			leitura = Integer.parseInt(principal.getLeitor().readLine());
 		}
@@ -38,6 +37,9 @@ public class Principal {
 			principal.contaFrequencia();
 			break;
 		case 4:
+			principal.moveParaFrenteK();
+			break;
+		case 5:
 			System.out.println("Saindo...");
 			break;
 		default: // Apenas uma formalidade. Se tudo estiver certinho, nunca passaremos por aqui.
@@ -51,6 +53,7 @@ public class Principal {
 	}
 	void moveParaFrente(Principal principal){
 		int status = 0;
+		//Lista lista = new lista()
 		while(status != -1){
 			System.out.println("Digite o que você deseja fazer:");
 			System.out.println("1 - Inserir elemento");
@@ -59,6 +62,26 @@ public class Principal {
 			System.out.println("4 - Sair");
 			try{
 				int leitura = Integer.parseInt(principal.getLeitor().readLine());
+				while ((leitura<= 0 )||( leitura > 4)){ //Provisoriamente será 3
+					System.out.println("Escolha inválida. Tente novamente.");
+					leitura = Integer.parseInt(principal.getLeitor().readLine());
+				}
+				switch (leitura){
+					case 1:
+						
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 4:
+						status = -1;
+						break;
+					default://Apenas formalidade...
+						System.out.println("Houston, we have a problem. That was not suppose to happen.");
+						break;
+					
+				}
 			}
 			catch (Exception e){
 				System.out.println("Ih! Deu xabu. E agora?");
@@ -66,6 +89,9 @@ public class Principal {
 		}
 	}
 	
+	void moveParaFrenteK(){
+		
+	}
 	void transpoe(){
 		
 	}
