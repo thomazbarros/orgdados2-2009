@@ -129,4 +129,36 @@ public class Lista {
 			}
 		}
 	}
+
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public int getK() {
+		return k;
+	}
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
+	public Celula getInicial() {
+		return inicial;
+	}
+
+	public void setInicial(Celula inicial) {
+		this.inicial = inicial;
+	}
+
+	public Celula getUltima() {
+		return ultima;
+	}
+
+	public void setUltima(Celula ultima) {
+		this.ultima = ultima;
+	}
 }
