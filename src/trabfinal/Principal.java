@@ -51,11 +51,9 @@ public class Principal {
 	}
 	void moveParaFrente(){
 		int status = 0;
-		
-		
-		
-		
-		//while
+		while(status != -1){
+			
+		}
 	}
 	
 	void transpoe(){
