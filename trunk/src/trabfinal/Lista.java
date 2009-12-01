@@ -43,7 +43,7 @@ public class Lista {
 		Celula celula = busca(chave);
 
 		if (celula == null) {
-			celula = new Celula(chave, ultima);
+			celula = new Celula(chave, null);
 			ultima = celula;
 			inicial = celula;
 			System.out.println("Elemento inserido com sucesso.");
