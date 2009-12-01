@@ -12,6 +12,7 @@ public class Principal {
 	public Principal(){
 		 leitor  = new BufferedReader(new InputStreamReader(System.in));
 	}
+	
     public static void main(String[] args) {
        try{
 		System.out.println("Digite qual tipo de lista autoajustável você deseja usar:");
@@ -38,6 +39,7 @@ public class Principal {
 			principal.opcoes(principal, 4,lista);
 		}
 		System.out.println("Saindo...");
+		principal.fecharJanela();
 	}
 
 	catch(Exception e){}
@@ -88,6 +90,7 @@ public class Principal {
 
 					case 4:
 						status = -1;
+						fecharJanela();
 						break;
 					default://Apenas formalidade...
 						System.out.println("Houston, we have a problem. That was not suppose to happen.");
@@ -174,6 +177,11 @@ public class Principal {
 
 	public BufferedReader getLeitor() {
 		return leitor;
+	}
+	
+	public void fecharJanela()
+	{
+		janela.dispose();
 	}
 
 }
