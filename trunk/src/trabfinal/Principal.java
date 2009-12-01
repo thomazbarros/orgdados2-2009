@@ -18,7 +18,7 @@ public class Principal {
 		System.out.println("1 - Mover para a frente;");
 		System.out.println("2 - Transposição;");
 		System.out.println("3 - Contador de frequência;");
-		System.out.println("4 - Montar para a frente 'k'");
+		System.out.println("4 - Mover para a frente 'k'");
 		System.out.println("5 - Sair.");
 		int leitura = 0;
 		Principal principal = new Principal();
