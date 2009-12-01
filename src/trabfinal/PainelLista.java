@@ -28,6 +28,8 @@ public class PainelLista extends JPanel{
 			celula = celula.getProximo();
 			i++;
 		}
+		this.revalidate();
+		this.repaint();
 	}
 	
 }
