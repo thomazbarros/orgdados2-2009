@@ -152,7 +152,7 @@ public class Lista {
 	public void moverParaFrenteK(Celula celula) {
 		for (int i = 0; i < k; i++) {
 			if (celula.getAnterior() != null) {
-				moverParaFrente(celula);
+				transposicao(celula);
 			}
 		}
 	}
