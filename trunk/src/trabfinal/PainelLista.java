@@ -21,6 +21,7 @@ public class PainelLista extends JPanel{
 			temp = new JLabel(String.valueOf(celula.getChave()));
 			//temp.setBounds(new Rectangle(0 + i*10,0,100,100));//100*(i+1), 800, 100, 100));
 			temp.setBorder(BorderFactory.createLineBorder(Color.black));
+			temp.setBounds(new Rectangle(0,0,100,100));
 			this.add(temp);
 			if(celula.getProximo() == null){
 				break;
