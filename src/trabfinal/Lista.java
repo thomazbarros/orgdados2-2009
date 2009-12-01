@@ -152,19 +152,13 @@ public class Lista {
 	public void contadorDeFrequencia(Celula celula) {
 		celula.setContador(celula.getContador() + 1);
 
-		while (celula.getAnterior() != null) {
-			if (celula.getContador() > celula.getAnterior().getContador()) {
+		while ((celula.getAnterior() != null)&&(celula.getContador() > celula.getAnterior().getContador())) {
 				transposicao(celula);
-			}
 		}
-
-		if (celula.getAnterior() == inicial) {
-			if (celula.getContador() > inicial.getContador()) {
-				inicial.setProximo(celula.getProximo());
-				celula.setProximo(inicial);
-				celula.setAnterior(null);
-				inicial = celula;
-			}
+		
+		if(celula.getAnterior() == null)
+		{
+			inicial = celula;
 		}
 	}
 
