@@ -19,7 +19,7 @@ public class PainelLista extends JPanel{
 		celula = lista.getInicial();
 		while(celula != null){
 			temp = new JLabel(String.valueOf(celula.getChave()));
-			temp.setBounds(new Rectangle(20*(i+1), 400, 100, 100));
+			temp.setBounds(new Rectangle(100*(i+1), 800, 100, 100));
 			temp.setBorder(BorderFactory.createLineBorder(Color.black));
 			this.add(temp);
 			if(celula.getProximo() == null){

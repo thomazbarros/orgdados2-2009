@@ -86,7 +86,7 @@ public class Lista {
 	}
 
 	public void moverParaFrente(Celula celula) { 
-		if (celula.getAnterior() == null) {
+		if (celula.getAnterior() != null) {
 			celula.getAnterior().setProximo(celula.getProximo());
 			if (celula.getProximo() != null) {
 				celula.getProximo().setAnterior(celula.getAnterior());

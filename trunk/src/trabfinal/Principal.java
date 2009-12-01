@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 
 public class Principal {
 	BufferedReader leitor;
+	Janela janela = new Janela();
+	
 	public Principal(){
 		 leitor  = new BufferedReader(new InputStreamReader(System.in));
 	}
@@ -56,6 +58,7 @@ public class Principal {
 					case 1:
 						System.out.println("Digite o elemento a ser inserido:");
 						lista.insercao(Integer.parseInt(principal.getLeitor().readLine()));
+						janela.getPainelLista().atualizaLista(lista);
 						break;
 
 					case 2:
