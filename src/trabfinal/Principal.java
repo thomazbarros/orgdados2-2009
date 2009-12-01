@@ -116,7 +116,8 @@ public class Principal {
 
 					case 2:
 						System.out.println("Digite o elemento a ser buscado:");
-						lista.busca(Integer.parseInt(principal.getLeitor().readLine()));
+						Celula celula = lista.busca(Integer.parseInt(principal.getLeitor().readLine()));
+						System.out.println(celula.getChave());
 						break;
 						
 					case 3:
