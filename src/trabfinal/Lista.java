@@ -82,6 +82,8 @@ public class Lista {
 			transposicao(celula);
 		case 3:
 			contadorDeFrequencia(celula);
+		case 4:
+			moverParaFrenteK(celula);
 		}
 	}
 
