@@ -5,6 +5,14 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
+/*
+Trabalho final de Organização de Dados 2
+Gustavo Henrique Alves dos Santos DRE:107363191
+Leopoldo André Dutra Lusquino Filho DRE:107363002
+Thomaz Avila Barros DRE:107363028
+Carolina Szkruc de Carvalho DRE:107413394
+*/
+
 public class Janela extends JFrame{
 	PainelLista painelLista;
 	
