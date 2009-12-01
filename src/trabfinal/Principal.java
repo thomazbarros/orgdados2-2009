@@ -63,12 +63,24 @@ public class Principal {
 
 					case 2:
 						System.out.println("Digite o elemento a ser buscado:");
-						lista.busca(Integer.parseInt(principal.getLeitor().readLine()));
+						int elemento = Integer.parseInt(principal.getLeitor().readLine());
+						Celula res = lista.busca(elemento);
+						if(res == null){
+							System.out.println("A lista está vazia.");
+						}else{
+							if(res.getChave() != elemento){
+								System.out.println("O elemento procurado não está na lista.");
+							}else{
+								System.out.println("O elemento está na lista.");
+							}
+						}
+						janela.getPainelLista().atualizaLista(lista);
 						break;
 						
 					case 3:
 						System.out.println("Digite o elemento a ser removido:");
 						lista.remocao(Integer.parseInt(principal.getLeitor().readLine()));
+						janela.getPainelLista().atualizaLista(lista);
 						break;
 
 					case 4:
@@ -115,17 +127,29 @@ public class Principal {
 					case 1:
 						System.out.println("Digite o elemento a ser inserido:");
 						lista.insercao(Integer.parseInt(principal.getLeitor().readLine()));
+						janela.getPainelLista().atualizaLista(lista);
 						break;
 
 					case 2:
 						System.out.println("Digite o elemento a ser buscado:");
-						Celula celula = lista.busca(Integer.parseInt(principal.getLeitor().readLine()));
-						System.out.println(celula.getChave());
+						int elemento = Integer.parseInt(principal.getLeitor().readLine());
+						Celula res = lista.busca(elemento);
+						if(res == null){
+							System.out.println("A lista está vazia.");
+						}else{
+							if(res.getChave() != elemento){
+								System.out.println("O elemento procurado não está na lista.");
+							}else{
+								System.out.println("O elemento está na lista.");
+							}
+						}
+						janela.getPainelLista().atualizaLista(lista);
 						break;
 						
 					case 3:
 						System.out.println("Digite o elemento a ser removido:");
 						lista.remocao(Integer.parseInt(principal.getLeitor().readLine()));
+						janela.getPainelLista().atualizaLista(lista);
 						break;
 
 					case 4:

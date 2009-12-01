@@ -61,14 +61,23 @@ public class Lista {
 
 	public void remocao(int chave) {
 		Celula celula = busca(chave);
+	//	Celula temp = null; //celula utilizada para guardar o anterior da atual celula
+	
 		if (celula == null) {
 			System.out.println("A lista está vazia.");
 		}else if (celula.getChave() == chave) {
 			if(celula.getAnterior() != null){
+			//	temp = celula.getAnterior();
 				celula.getAnterior().setProximo(celula.getProximo());
 			}
 			if(celula.getProximo() != null){
-				celula.getProximo().setAnterior(celula.getAnterior());
+				celula.getProximo().setAnterior(celula.getAnterior());//temp);
+			}
+			if(getInicial().getChave() == celula.getChave()){
+				setInicial(celula.getProximo());
+			}
+			if(getUltima().getChave() == celula.getChave()){
+				setUltima(celula.getAnterior());
 			}
 			System.out.println("Elemento removido com sucesso.");
 		}else{
@@ -88,7 +97,10 @@ public class Lista {
 	}
 
 	public void moverParaFrente(Celula celula) { 
+	//	Celula temp = null;
+		System.out.println("Entrei");	
 		if (celula.getAnterior() != null) {
+		//	temp = celula.getAnterior();
 			celula.getAnterior().setProximo(celula.getProximo());
 			if (celula.getProximo() != null) {
 				celula.getProximo().setAnterior(celula.getAnterior());
