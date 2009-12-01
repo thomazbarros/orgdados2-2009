@@ -28,10 +28,14 @@ public class Principal {
 			leitura = Integer.parseInt(principal.getLeitor().readLine());
 		}
 		if ((leitura>=1) && (leitura<=3)){
-			principal.opcoes(principal, leitura);
+			Lista lista = new Lista(leitura);
+			principal.opcoes(principal, leitura , lista);
 		}
 		else if(leitura == 4){
-			principal.opcoesK(principal);
+			System.out.println("Digite o valor de k desejado");
+			Lista lista = new Lista(4, Integer.parseInt(principal.getLeitor().readLine()));
+			//principal.opcoesK(principal);
+			principal.opcoes(principal, 4,lista);
 		}
 		System.out.println("Saindo...");
 	}
@@ -39,9 +43,8 @@ public class Principal {
 	catch(Exception e){}
 
 	}
-	void opcoes(Principal principal, int tipo){
+	void opcoes(Principal principal, int tipo , Lista lista){
 		int status = 0;
-		Lista lista = new Lista(tipo);
 		while(status != -1){
 			System.out.println("Digite o que você deseja fazer:");
 			System.out.println("1 - Inserir elemento");
@@ -99,7 +102,7 @@ public class Principal {
 		}
 	}
 	
-	void opcoesK(Principal principal){
+	/*void opcoesK(Principal principal){
 		int status = 0;
 		
 		
@@ -167,7 +170,7 @@ public class Principal {
 				e.printStackTrace();
 			}
 		}
-	}
+	}*/
 
 	public BufferedReader getLeitor() {
 		return leitor;
