@@ -40,8 +40,10 @@ public class Lista {
 		
 		// caso em que a celula retornada é a chave procurada
 		// devem ser chamados os métodos de auto-ajuste
-		if(ultima.getChave() == chave){  
+		if(ultima.getChave() == chave){
+			Celula temp = ultima;
 			arruma(celula);
+			return temp;
 		}
 		return ultima;
 	}
@@ -112,6 +114,8 @@ public class Lista {
 			celula.getAnterior().setProximo(celula.getProximo());
 			if (celula.getProximo() != null) {
 				celula.getProximo().setAnterior(celula.getAnterior());
+			}else{
+				setUltima(celula.getAnterior());
 			}
 			celula.setAnterior(null);
 			celula.setProximo(inicial);
@@ -123,9 +127,24 @@ public class Lista {
 	public void transposicao(Celula celula) { 
 		if (celula.getAnterior() != null) {
 			Celula anterior = celula.getAnterior();
+			
+			if(celula.getAnterior().getAnterior() != null){
+				celula.getAnterior().getAnterior().setProximo(celula);
+			}else{
+				//anterior é o primeiro nó, logo a célula será o novo nó inicial
+				setInicial(celula);
+			}
+			celula.setAnterior(celula.getAnterior().getAnterior());
+			
 			anterior.setProximo(celula.getProximo());
 			anterior.setAnterior(celula);
-			celula.getAnterior().getAnterior().setProximo(celula);
+			
+			if(celula.getProximo() != null){
+				celula.getProximo().setAnterior(anterior);
+			}else{
+				//célula é o último nó, logo anterior será o novo último nó
+				setUltima(anterior);
+			}
 			celula.setProximo(anterior);
 		}
 	}
