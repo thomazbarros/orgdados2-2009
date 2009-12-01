@@ -25,6 +25,11 @@ public class Lista {
 		Celula celula = inicial;
 
 		while (celula.getProximo() != null) {
+			//System.out.println("Celula atual na busca");
+			//System.out.println(celula.getChave());
+			//System.out.println(celula.getAnterior().getChave());
+			//System.out.println(celula.getProximo().getChave());
+			//System.out.println("Fim da celula atual na busca");
 			if (celula.getChave() == chave) {
 				arruma(celula);
 				return celula;
