@@ -34,6 +34,8 @@ public class Lista {
 				arruma(celula);
 				return celula;
 			}
+			
+			celula = celula.getProximo();
 		}
 
 		return ultima;
