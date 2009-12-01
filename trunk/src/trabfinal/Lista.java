@@ -45,7 +45,7 @@ public class Lista {
 		Celula celula = busca(chave);
 
 		if (celula == null) {
-			celula = new Celula(chave, null);
+			celula = new Celula(chave, ultima);
 			ultima = celula;
 			inicial = celula;
 			System.out.println("Elemento inserido com sucesso.");
@@ -84,8 +84,6 @@ public class Lista {
 			transposicao(celula);
 		case 3:
 			contadorDeFrequencia(celula);
-		case 4:
-			moverParaFrenteK(celula);
 		}
 	}
 
