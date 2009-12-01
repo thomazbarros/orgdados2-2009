@@ -37,7 +37,12 @@ public class Lista {
 			
 			celula = celula.getProximo();
 		}
-
+		
+		// caso em que a celula retornada é a chave procurada
+		// devem ser chamados os métodos de auto-ajuste
+		if(ultima.getChave() == chave){  
+			arruma(celula);
+		}
 		return ultima;
 	}
 
@@ -89,18 +94,21 @@ public class Lista {
 		switch (tipo) {
 		case 1:
 			moverParaFrente(celula);
+			break;
 		case 2:
 			transposicao(celula);
+			break;
 		case 3:
 			contadorDeFrequencia(celula);
+			break;
+		case 4:
+			moverParaFrenteK(celula);
+			break;
 		}
 	}
 
 	public void moverParaFrente(Celula celula) { 
-	//	Celula temp = null;
-		System.out.println("Entrei");	
 		if (celula.getAnterior() != null) {
-		//	temp = celula.getAnterior();
 			celula.getAnterior().setProximo(celula.getProximo());
 			if (celula.getProximo() != null) {
 				celula.getProximo().setAnterior(celula.getAnterior());
