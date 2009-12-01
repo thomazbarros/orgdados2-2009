@@ -27,5 +27,13 @@ public class Janela extends JFrame{
 		setResizable(true);
 		setVisible(true);
 	}
+
+	public PainelLista getPainelLista() {
+		return painelLista;
+	}
+
+	public void setPainelLista(PainelLista painelLista) {
+		this.painelLista = painelLista;
+	}
 	
 }
