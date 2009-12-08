@@ -11,8 +11,6 @@ Carolina Szkruc de Carvalho DRE:107413394
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-//import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
-
 public class Principal {
 	BufferedReader leitor;
 	Janela janela = new Janela();
@@ -43,7 +41,6 @@ public class Principal {
 		else if(leitura == 4){
 			System.out.println("Digite o valor de k desejado");
 			Lista lista = new Lista(4, Integer.parseInt(principal.getLeitor().readLine()));
-			//principal.opcoesK(principal);
 			principal.opcoes(principal, 4,lista);
 		}
 		System.out.println("Saindo...");
@@ -107,82 +104,11 @@ public class Principal {
 				}
 			}
 			catch (Exception e){
-				//System.out.println("Ih! Deu xabu. E agora?");
 				e.printStackTrace();
 			}
 		}
 	}
 	
-	/*void opcoesK(Principal principal){
-		int status = 0;
-		
-		
-		while(status != -1){
-			
-			try{
-				System.out.println("Digite o valor de k desejado");
-				Lista lista = new Lista(4, Integer.parseInt(principal.getLeitor().readLine()));
-				
-				System.out.println("Digite o que você deseja fazer:");
-				System.out.println("1 - Inserir elemento");
-				System.out.println("2 - Buscar elemento");
-				System.out.println("3 - Remover elemento");
-				System.out.println("4 - Sair");
-				
-				int leitura = Integer.parseInt(principal.getLeitor().readLine());
-				
-				while ((leitura<= 0 )||( leitura > 4)){ 
-					System.out.println("Escolha inválida. Tente novamente.");
-					leitura = Integer.parseInt(principal.getLeitor().readLine());
-				}
-				
-				switch (leitura){
-				
-					case 1:
-						System.out.println("Digite o elemento a ser inserido:");
-						lista.insercao(Integer.parseInt(principal.getLeitor().readLine()));
-						janela.getPainelLista().atualizaLista(lista);
-						break;
-
-					case 2:
-						System.out.println("Digite o elemento a ser buscado:");
-						int elemento = Integer.parseInt(principal.getLeitor().readLine());
-						Celula res = lista.busca(elemento);
-						if(res == null){
-							System.out.println("A lista está vazia.");
-						}else{
-							if(res.getChave() != elemento){
-								System.out.println("O elemento procurado não está na lista.");
-							}else{
-								System.out.println("O elemento está na lista.");
-							}
-						}
-						janela.getPainelLista().atualizaLista(lista);
-						break;
-						
-					case 3:
-						System.out.println("Digite o elemento a ser removido:");
-						lista.remocao(Integer.parseInt(principal.getLeitor().readLine()));
-						janela.getPainelLista().atualizaLista(lista);
-						break;
-
-					case 4:
-						status = -1;
-						break;
-					
-					default://Apenas formalidade...
-						System.out.println("Houston, we have a problem. That was not suppose to happen.");
-						break;
-					
-				}
-			}
-			catch (Exception e){
-				//System.out.println("Ih! Deu xabu. E agora?");
-				e.printStackTrace();
-			}
-		}
-	}*/
-
 	public BufferedReader getLeitor() {
 		return leitor;
 	}
